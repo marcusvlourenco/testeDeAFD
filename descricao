@@ -1,0 +1,32 @@
+Trabalho de Linguagens Formais e Autômatos –
+Autômato Finito Determinístico
+
+OBJETIVO
+
+Implementar um algoritmo para o funcionamento de um Autômato Finito
+Determinístico, e que realize o teste de palavras fornecidas pelo usuário.
+
+DESCRIÇÃO
+
+O trabalho consiste em implementar um programa que em um primeiro
+momento leia a descrição formal de uma AFD do usuário, e em seguida
+teste palavras por ele fornecidas, respondendo se as palavras pertencem ou
+não à linguagem descrita pelo autômato.
+
+IMPLEMENTAÇÃO
+
+Uma possível implementação do AFD se daria de modo que a descrição
+formal do AFD {E, Σ, δ, i, F} é inserida em um programa, e após isso pode se
+testar uma palavra, e o programa responde se a palavra pertence ou não à
+linguagem que o AFD reconhece
+
+Início
+  Estado Atual <- Estado Inicial;
+  Para i variar do Símbolo inicial da fita até o símbolo final
+    Faça Se Existe δ (Estado Atual, i)
+      Então Estado Atual <- δ (Estado Atual, i);
+      Senão REJEITA;
+  Se Estado Atual é Final
+    Então ACEITA;
+    Senão REJEITA;
+Fim.
