@@ -107,7 +107,9 @@
               <tr>
                   <th>&nbsp;</th>
                   <?php 
-                    for($i = 0; $i < count($alfabetoFinal); $i++){
+                    $quantA=count($alfabetoFinal);
+                    $quantE=count($estadosFinal);
+                    for($i = 0; $i < $quantA; $i++){
                         echo "<th>".$alfabetoFinal[$i]."</th>";
                     }
                   ?>                
@@ -115,9 +117,10 @@
             </thead>
             <tbody>
                 <?php 
-                    for($j = 0; $j < count($estadosFinal); $j++){
+                    
+                    for($j = 0; $j < $quantE; $j++){
                         echo "<tr><td>".$estadosFinal[$j]."</td>";
-                        for($k = 0; $k < count($alfabetoFinal); $k++){
+                        for($k = 0; $k < $quantA; $k++){
                             echo "<td><input type=\"text\" class=\"\" id=\"fT".$j.$k."\" name=\"fT".$j.$k."\"></td>";                            
                         }                        
                         echo "</tr>"; 
@@ -126,6 +129,8 @@
             </tbody>
           </table>
         
+            <input type="hidden" id="quantA" name="quantA" value="<?php echo $quantA; ?>">
+            <input type="hidden" id="quantE" name="quantE" value="<?php echo $quantE; ?>">
         
         
         <button type="submit" class="btn btn-secondary" name="descricaoF">Testar Palavra</button>
