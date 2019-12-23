@@ -1,72 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>AFD - Trabalho</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <style>
-        .iframe{
-            height:100%;
-            position: relative;
-            display: block;
-            width: 100%;
-            padding: 0;
-            overflow: hidden;
-        }
-        
-    </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-      <!-- Brand/logo -->
-      <a class="navbar-brand" href="descricao.php" target="iframe">
-        <img src="arquivos/UEM-LFA.png" alt="logo" style="width:90px;">
-      </a>
-      <ul class="navbar-nav">
-          <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            <button type="button" class="btn btn-secondary">Descrição Formal</button>
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="inserir.php" target="iframe">
-                <button type="button" class="btn btn-primary">Inserir</button>
-            </a>            
-          </div>
-        </li>
-      </ul>
-    </nav>
-    
-    
-    
-    <div class="container-fluid text-center">    
-            <div class="row content">                
-                <div class="col-sm-0 sidenav">
-                   
-                        
-                </div>
-                <div class="col-sm-12 text-left"> 
-                
-                    <div class="embed-responsive embed-responsive-4by3">
-                        
-                        <iframe class="embed-responsive iframe"  src="descricao.php"  name="iframe"></iframe>
-                    </div>                   
-                </div>
-                <div class="col-sm-0 sidenav"> 
-                                     
-                </div>
-            </div>
-        </div>
-        <footer class="container text-center">
-            :)
-        </footer>
-    
-    
-    
-    
-  </body>
-</html>
+<?php
+    echo '<!DOCTYPE html>';
+    echo '<html lang="pt">';
+    echo '<head> <!-- Cabeçalho -->';
+    echo '<title>AFD - Trabalho</title>';
+    echo '<meta charset="utf-8">';
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
+    echo '<link href="arquivos/css/bootstrap.css" rel="stylesheet" type="text/css"/>';
+    echo '<script src="arquivos/js/bootstrap.min.js" type="text/javascript"></script>';
+    echo '<script src="arquivos/js/jquery.min.js" type="text/javascript"></script>';
+    echo '<script src="arquivos/js/popper.min.js" type="text/javascript"></script>';
+    echo '<link href="arquivos/css/index.css" rel="stylesheet" type="text/css"/>';
+    echo '</head>';
+    echo '<body>';
+    echo '<nav class="navbar navbar-expand-sm bg-dark navbar-dark">';
+    echo '<!-- Brand/logo -->';
+    echo '<a class="navbar-brand" href="descricao.php" target="iframe">';
+    echo '<img src="arquivos/img/UEM-LFA.png"  alt="logo" style="width:90px;"/>';
+    echo '</a>';
+    echo '<ul class="navbar-nav">';
+    echo '<li class="nav-item">';
+    echo '<a class="nav-link" href="inserir.php"  target="iframe">';
+    echo '<button type="button" class="btn btn-primary">Inserir Descrição Formal</button>';
+    echo '</a>';
+    echo '</li>';
+    echo '</ul>';
+    echo '</nav>';
+    echo '<div class="container-fluid text-center">';
+    echo '<div class="row content">';
+    echo '<div class="col-sm-0 sidenav">';
+    echo '</div>';
+    echo '<div class="col-sm-10 text-left">';
+    echo '<div class="embed-responsive embed-responsive-4by3">';
+    echo '<iframe class="embed-responsive iframe"  src="descricao.php"  name="iframe"></iframe>';
+    echo '</div>';
+    echo '</div>';
+    echo '<div class="col-sm-2 sidenav">';
+    echo '<img  id="myImg" src="arquivos/img/maquinas-e-linguagens-300x236.gif" alt="Máquinas"  style="width:100%;max-width:200px"/>';
+    echo '</br></br></br></br></br></br></br></br>';
+    echo '<img id="myImg2" alt="difícil entender..." src="arquivos/img/site.jpg"  style="width:100%;max-width:200px"/>';
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+    echo '<!-- The Modal -->';
+    echo '<div id="myModal" class="modal">';
+    echo '<span class="close">&times;</span>';
+    echo '<img class="modal-content" id="img01">';
+    echo '<div id="caption"></div>';
+    echo '</div>';
+    echo '<footer class="container text-center">';
+    echo '"O povo nem sabe que não sabe" - <i>Noam Chomsky.<i/>';
+    echo '</footer>';
+    echo '</body>';
+    echo '</html>';
+    echo '<script src="arquivos/js/index.js" type="text/javascript"></script>';
