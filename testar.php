@@ -1,4 +1,36 @@
 <?php     //é recebido tanto da pagina inserir.php como de testar.php os valores dos inputs, que preencheram com valor as váriaveis
+    function geraEstados($estados){
+        $estadosArray=str_split($estados);
+        $tamE=strlen($estados);
+        if($tamE<30){//se quantidade de estados for de s0 a s9
+            $todosEstados = str_split(str_replace(',', "", $estados), 2);        
+        }else{//se maior
+            $outputE1 = array_slice($estadosArray, 0, 29);//pega parcela de s0 a s9
+            $outputE2 = array_slice($estadosArray, 30, $tamE);//pega resto de $estados
+            $outputE3 = implode('', $outputE1);
+            $outputE4 = implode('', $outputE2);
+            $outputEs1 = str_split(str_replace(',', "", $outputE3), 2);//da primeira parte, retira ',' e cria array de 2 em 2 caracteres
+            $outputEs2 = str_split(str_replace(',', "", $outputE4), 3);//da segunda parte, retira ',' e cria array de 3 em 3 caracteres
+            $todosEstados=array_merge($outputEs1, $outputEs2);//junta a segunda parte
+        }
+        return $todosEstados;
+    }
+    function geraEstadosFinal($estadosF){    
+        $estadosFArray=str_split($estadosF);     
+        $tamEF=strlen($estadosF);
+        if($tamEF<30){//se quantidade de estados for de s0 a s9
+            $todosEstadosFinal = str_split(str_replace(',', "", $estadosF), 2);            
+        }else{//se maior
+            $outputEF1 = array_slice($estadosFArray, 0, 29);//pega parcela de s0 a s9
+            $outputEF2 = array_slice($estadosFArray, 30, $tamEF);//pega resto de $estados final
+            $outputEF3 = implode('', $outputEF1);
+            $outputEF4 = implode('', $outputEF2);
+            $outputEsF1 = str_split(str_replace(',', "", $outputEF3), 2);//da primeira parte, retira ',' e cria array de 2 em 2 caracteres
+            $outputEsF2 = str_split(str_replace(',', "", $outputEF4), 3);//da segunda parte, retira ',' e cria array de 3 em 3 caracteres
+            $todosEstadosFinal=array_merge($outputEsF1, $outputEsF2);//junta a segunda parte
+        }
+        return $todosEstadosFinal;        
+    }
     $virgula = ",";
     $vazio="";
     $alfabetoForm = filter_input(INPUT_POST, 'alfabetoFinal');
@@ -6,8 +38,8 @@
     $estadoInicialForm = filter_input(INPUT_POST, 'estadoIFinal');
     $estadosFinalForm = filter_input(INPUT_POST, 'estadosFFinal');
     $alfabeto = str_split(str_replace($virgula, $vazio, $alfabetoForm));//como foi inserido virgula, essa função a retira e tambem gera um array com str_split
-    $estados = str_split(str_replace($virgula, $vazio, $estadosForm), 2);//essa função armazena a cada 2 digitos o valor em uma posição do array, como estados[0]=S0, estados[1]=S1
-    $estadosFinal = str_split(str_replace($virgula, $vazio, $estadosFinalForm), 2);
+    $estados = geraEstados($estadosForm);
+    $estadosFinal = geraEstadosFinal($estadosFinalForm);
     $estadoInicial = str_split($estadoInicialForm, 2);
     $quantidadeSimbolosAlfabeto=count($alfabeto);//conta quantos simbolos há no alfabeto
     $quantidadeEstados=count($estados);
