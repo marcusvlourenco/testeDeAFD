@@ -40,6 +40,7 @@
         $estadosArray=str_split($estados);
         $estadoIArray=str_split($estadoI);        
         //teste Estado Inicial
+        
         if($tamI==2){
             if((!ctype_lower($estadoIArray[0])&&(!ctype_upper($estadoIArray[0])))or((intval($estadoIArray[1])<>0)&&(intval($estadoIArray[1])<>1))or(ctype_lower($estadoIArray[1])or(ctype_upper($estadoIArray[1])))){
                 echo "<script>alert('REJEITADO ESTADO INICIAL INSERIDO, O ESTADO INICIAL DEVE TER UM CARACTER COM UM NUMERO JUNTOS!');</script>";//retorna mensagem
@@ -49,7 +50,12 @@
             echo "<script>alert('REJEITADO ESTADO INICIAL INSERIDO, O ESTADO INICIAL DEVE TER UM CARACTER COM UM NUMERO JUNTOS!');</script>";//retorna mensagem
             echo "<script>window.history.back()</script>";//retorna para a pagina anterior            
         }
-        for($i=0;$i<$tamA;$i++){
+        for($i=0;$i<$tamA;$i++){//verifica se alfabeto repete algum simbolo
+            if(substr_count($alfabeto, $alfabetoArray[$i])>0){
+                echo "<script>alert('REJEITADO ALFABETO INSERIDO, O ALFABETO NÃO DEVE SER REPETIDO!');</script>";//retorna mensagem
+                echo "<script>window.history.back()</script>";//retorna para a pagina anterior
+                
+            }   
             if(($i % 2)==0){
                 if(!ctype_lower($alfabetoArray[$i])){//teste se simbolo da palavra é minusculo
                     if(($alfabetoArray[$i]<>'0')&&($alfabetoArray[$i]<>'1')){//se é 1 ou 0

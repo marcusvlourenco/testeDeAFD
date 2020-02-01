@@ -6,6 +6,7 @@
     echo '<meta charset="utf-8">';
     echo '<meta name="viewport" content="width=device-width, initial-scale=1">';
     echo '<link href="arquivos/css/bootstrap.css" rel="stylesheet" type="text/css"/>';
+    echo '<link rel="sortcut icon" href="arquivos/img/maquinas-e-linguagens-300x236.gif" type="image/gif" />';
     echo '<script src="arquivos/js/bootstrap.min.js" type="text/javascript"></script>';
     echo '<script src="arquivos/js/jquery.min.js" type="text/javascript"></script>';
     echo '<script src="arquivos/js/popper.min.js" type="text/javascript"></script>';
